@@ -1,18 +1,21 @@
-name: Store readme in Drive
-on:
-  push: { branches: [main] }
+# .github/workflows/main.yml
+name: Main
+on: [push]
+
 jobs:
-  pushToDrive:
-    name: Upload readme to drive
+  my_job:
     runs-on: ubuntu-latest
+
     steps:
-      # Checkout
-      - name: Checkout repository
+
+      - name: Checkout code
         uses: actions/checkout@v2
-      # Upload to Drive
-      - name: Upload README.md to Google Drive
-        uses: Jodebu/upload-to-drive@master
+
+      - name: Upload to gdrive
+        uses: adityak74/google-drive-upload-git-action@main
         with:
-          target: resume.tex
           credentials: ${{ secrets.CREDS }}
-          folder: ${{ secrets.FOLDER_ID }}
+          filename: "resume.tex"
+          folderId: ${{ secrets.FOLDER_ID }}
+          name: "resume.tex" # optional string
+          overwrite: "true" # optional boolean
