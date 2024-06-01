@@ -10,13 +10,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Archive files
+      - name: Render Latex
         run: |
           sudo apt-get update
-          sudo apt-get install zip
           sudo apt-get install texlive-latex-base
-          sudo apt-get install texlive-fonts-recommended
-          sudo apt-get install texlive-fonts-extra
           pdflatex resume.tex
 
       - name: Upload to gdrive
@@ -25,5 +22,7 @@ jobs:
           credentials: ${{ secrets.CREDS }}
           filename: "resume.pdf"
           folderId: ${{ secrets.FOLDER_ID }}
-          name: "resume.pdf" # optional string
-          overwrite: "true" # optional boolean
+          overwrite: "true"
+          mirrorDirectoryStructure: "true"
+          useCompleteSourceFilenameAsName: "true"
+
