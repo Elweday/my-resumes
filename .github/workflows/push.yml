@@ -15,4 +15,4 @@ jobs:
         with:
           target: resume.tex
           credentials: ${{ secrets.CREDS }}
-          folder: root
+          folder: ${{ secrets.FOLDER_ID }}
