@@ -2,21 +2,35 @@ name: Main
 on: [push]
 
 jobs:
-  my_job:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Checkout code
         uses: actions/checkout@v2
 
       - name: Render Latex
         run: |
           sudo apt-get update
-          sudo apt-get install texlive-latex-base
-          sudo apt-get install texlive-fonts-recommended
-          sudo apt-get install texlive-fonts-extra
+          sudo apt-get install -y texlive-latex-base texlive-fonts-recommended texlive-fonts-extra
           pdflatex resume.tex
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: resume
+          path: resume.pdf
+
+  upload:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: resume
+          path: resume.pdf
 
       - name: Upload to gdrive
         uses: adityak74/google-drive-upload-git-action@main
@@ -27,4 +41,3 @@ jobs:
           overwrite: "true"
           mirrorDirectoryStructure: "true"
           useCompleteSourceFilenameAsName: "true"
-
