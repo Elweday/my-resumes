@@ -14,25 +14,16 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install zip
-          zip -r archive.zip *
+          sudo apt-get install texlive-latex-base
+          sudo apt-get install texlive-fonts-recommended
+          sudo apt-get install texlive-fonts-extra
+          pdflatex resume.tex
 
       - name: Upload to gdrive
         uses: adityak74/google-drive-upload-git-action@main
         with:
           credentials: ${{ secrets.CREDS }}
-          filename: "archive.zip"
+          filename: "resume.pdf"
           folderId: ${{ secrets.FOLDER_ID }}
-          name: "documentation.zip" # optional string
+          name: "resume.pdf" # optional string
           overwrite: "true" # optional boolean
-      - name: Make Directory Structure
-        run: |
-          mkdir -p w/x/y
-          date +%s > w/x/y/z
-      - name: Mirror Directory Structure
-        uses: adityak74/google-drive-upload-git-action@main
-        with:
-          credentials: ${{ secrets.CREDS }}
-          filename: w/x/y/z
-          folderId: ${{ secrets.FOLDER_ID }}
-          overwrite: "true"
-          mirrorDirectoryStructure: "true"
