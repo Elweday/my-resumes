@@ -18,4 +18,4 @@ jobs:
           filename: "resume.tex"
           folderId: ${{ secrets.FOLDER_ID }}
           name: "resume.tex" # optional string
-          overwrite: "true" # optional boolean
+          overwrite: "false" # optional boolean
