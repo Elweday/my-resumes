@@ -31,11 +31,15 @@ jobs:
         with:
           name: resume
           path: "./resume.pdf"
+          
+      - name: Render Latex
+        run: |
+          echo "hello from github" > hello.txt
 
       - name: Upload to gdrive
         uses: adityak74/google-drive-upload-git-action@main
         with:
           credentials: ${{ secrets.CREDS }}
-          filename: "./resume.pdf"
+          filename: "hello.txt"
           folderId: ${{ secrets.FOLDER_ID }}
           overwrite: "true"
