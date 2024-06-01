@@ -9,7 +9,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Render Latex
+      - name: Render LaTeX
         run: |
           sudo apt-get update
           sudo apt-get install -y texlive-latex-base texlive-fonts-recommended texlive-fonts-extra
@@ -19,7 +19,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: resume
-          path: "./resume.pdf"
+          path: resume.pdf
 
   upload:
     runs-on: ubuntu-latest
@@ -30,17 +30,16 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: resume
-          path: "./resume.pdf"
-          
-      - name: Render Latex
-        run: |
-          echo "hello from github" > "hello.txt"
-          ls
+          path: .
 
-      - name: Upload to gdrive
+      - name: List files for debugging
+        run: |
+          ls -l
+
+      - name: Upload to Google Drive
         uses: adityak74/google-drive-upload-git-action@main
         with:
           credentials: ${{ secrets.CREDS }}
-          filename: "resume.pdf"
+          filename: resume.pdf
           folderId: ${{ secrets.FOLDER_ID }}
           overwrite: "true"
