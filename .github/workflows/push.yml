@@ -19,7 +19,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: resume
-          path: resume.pdf
+          path: "./resume.pdf"
 
   upload:
     runs-on: ubuntu-latest
@@ -30,7 +30,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: resume
-          path: resume.pdf
+          path: "./resume.pdf"
 
       - name: Upload to gdrive
         uses: adityak74/google-drive-upload-git-action@main
