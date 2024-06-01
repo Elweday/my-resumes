@@ -34,7 +34,8 @@ jobs:
           
       - name: Render Latex
         run: |
-          echo "hello from github" > hello.txt
+          echo "hello from github" > "hello.txt"
+          ls
 
       - name: Upload to gdrive
         uses: adityak74/google-drive-upload-git-action@main
