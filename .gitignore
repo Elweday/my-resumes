@@ -1,2 +1,5 @@
 *.log
 
+resumes/**
+!resumes/*.tex
+*.zip

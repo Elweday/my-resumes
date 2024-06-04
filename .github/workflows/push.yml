@@ -13,13 +13,19 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y texlive-latex-base texlive-fonts-recommended texlive-fonts-extra
-          pdflatex resume.tex
+          
+          cd resumes
+          for resume in *.tex; do
+              pdflatex "$resume.tex"
+          done
+          cd ..
+          zip -R resumes 'resumes/*.pdf'
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
           name: resume
-          path: resume.pdf
+          path: resumes.zip
 
   upload:
     runs-on: ubuntu-latest
@@ -34,12 +40,12 @@ jobs:
 
       - name: List files for debugging
         run: |
-          ls -l
+          unzip resumes.zip
 
       - name: Upload to Google Drive
         uses: adityak74/google-drive-upload-git-action@main
         with:
           credentials: ${{ secrets.CREDS }}
-          filename: resume.pdf
+          filename: "*.pdf"
           folderId: ${{ secrets.FOLDER_ID }}
           overwrite: "true"
