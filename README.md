@@ -6,7 +6,32 @@ This repository automates the process of rendering a LaTeX resume and uploading 
 
 Follow these steps to set up and run this project:
 
-### 1. Existing or Creating New GCP Project
+### 1. Clone the Repository to your local machine
+
+1. Open your terminal or command prompt and navigate to the directory where you want to clone the repository.
+2. Run the following command to clone the repository:
+   ```sh
+   git clone https://github.com/elweday/my-resumes.git
+   ```
+3. Change the directory to the newly created `my-resumes` folder:
+   ```sh
+   cd my-resumes
+   ```
+4. Run the following command to install the required LaTeX packages:
+   ```sh
+   sudo apt-get update
+   sudo apt-get install -y texlive-latex-base texlive-fonts-recommended texlive-fonts-extra
+   ```
+5. Run the following command to render the LaTeX resume:
+   ```sh
+   pdflatex resumes/SWE.tex
+   ```
+
+6. Open the `SWE.pdf` file in a PDF viewer to view the rendered resume.
+
+
+
+### 2. Existing or Creating New GCP Project
 
 1. **Create a New GCP Project:**
    - Go to the [Google Cloud Console](https://console.cloud.google.com/).
@@ -16,7 +41,7 @@ Follow these steps to set up and run this project:
 2. **Use an Existing GCP Project:**
    - Select your existing project from the project dropdown in the Google Cloud Console.
 
-### 2. Create a New Service Account
+### 3. Create a New Service Account
 
 1. **Create Service Account:**
    - In the Google Cloud Console, navigate to **IAM & Admin** > **Service Accounts**.
@@ -32,7 +57,7 @@ Follow these steps to set up and run this project:
    - Click **Add Key** > **Create New Key**.
    - Select JSON format and download the key file.
 
-### 3. Make a New Google Drive Folder and Give the Service Account Access
+### 4. Make a New Google Drive Folder and Give the Service Account Access
 
 1. **Create Folder:**
    - Go to [Google Drive](https://drive.google.com/) and create a new folder.
@@ -44,7 +69,7 @@ Follow these steps to set up and run this project:
    - Add the service account email and give it **Editor** permissions.
    - Click **Send** to save the changes.
 
-### 4. Get Token and Encode it in Base64
+### 5. Get Token and Encode it in Base64
 
 1. **Encode Credentials:**
    - Open the downloaded JSON key file and copy its contents.
