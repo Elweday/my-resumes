@@ -22,9 +22,6 @@
 
 \input{glyphtounicode}
 
-
-
-
 %----------FONT OPTIONS----------
 % sans-serif
 % \usepackage[sfdefault]{FiraSans}
@@ -125,68 +122,48 @@
 
 
 \begin{document}
-
-%----------HEADING----------
-
-% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
-%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
-% \end{tabular*}
-
 \begin{center}
-	\textbf{\Huge \scshape \redact{Mohammed Nasser Hilal}} \\ \vspace{1pt}
+	\textbf{\Huge \scshape \redact{Mohammed Nasser}} \\ \vspace{1pt}
 	\small 
   \href{mailto:mohammednh2864@gmail.com}{\underline{\redact{mohammednh2864}@gmail.com}} $|$
 	\href{https://linkedin.com/in/elweday}{\underline{linkedin.com/in/\redact{elweday}}} $|$
 	\href{https://github.com/elweday}{\underline{github.com/\redact{elweday}}} $|$
   \href{https://elweday.vercel.app}{\redact{\underline{elweday.vercel.app}}} $|$
-  +201207342864
 \end{center}
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+\resumeSubHeadingListStart
+\resumeSubheading
+{\redact{Studyo}}{London, UK }{Software Developer \small (Remote)}{Nov 2023 -- Present}
+\resumeItemListStart
+\resumeItem{Orchestrated the development of backend video processing containerized microservices on Google Cloud Platform (Firestore, Cloud Functions, Cloud Storage) using Go and Python to serve as a backend for a mobile applications and internal services.}
+\resumeItem{Integrated CI/CD pipelines with GitHub Actions and Docker, cutting deployment times by half and significantly reducing integration errors.}
+\resumeItem{Developed and documented CLI tools and modular solutions to automate repetitive development tasks, saving the team 10 hours per week on average.}
+\resumeItem{Created complex animations with LaTeX, ffmpeg, and OpenGL, visualizing abstract concepts for the company's e-learning platform.}
+\resumeItem{Collaborated with a team to create a website for the company, showcasing the company's products and services.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
 
 
 %-----------EDUCATION-----------
 \section{Education}
 \resumeSubHeadingListStart
 \resumeSubheading{\redact{Helwan} University}{\redact{Cairo, EG}}{Bachelor of Computer and Communication Engineering }{Oct 2021 -- Aug 2026} \\
-\vspace{0.25cm}
-\small{\textbf{Relevant Coursework}{: Operating Systems, OOP, Databases, Data Structures and Algorithms}} \\
+\vspace{0.25cm}\small{\textbf{Relevant Coursework}{: OS, OOP, Databases, DSA, Microprocessors and Assembly.}} \\
 \resumeSubHeadingListEnd
 
 
-%-----------EXPERIENCE-----------
-\section{Experience}
-\resumeSubHeadingListStart
-
-\resumeSubheading
-{Software Developer}{Nov 2023 -- Present}
-{\redact{@studyo.io}}{Remote}
-\resumeItemListStart
-\resumeItem{Orchestrated the development of backend video processing containerized microservices on Google Cloud Platform (Firestore, Cloud Functions, Cloud Storage) using Go and Python to serve as a backend for a mobile applications and internal services.}
-\resumeItem{Integrated CI/CD pipelines to enhance agility and efficiency, leading to a 50\% decrease in development cycles.}
-\resumeItem{Developed and documented CLI tools and modular solutions to automate repetitive development tasks, saving 20\% development time and boosting team productivity.}
-\resumeItem{Used advanced math to create visually compelling animations using LaTeX, ffmpeg, OpenGL, fostering immersive learning experiences and optimizing for performance for both rendering and response times.}
-\resumeItem{Collaborated with a team of developers to create a website for the company, showcasing the company's products and services.}
-\resumeItemListEnd
-\resumeSubHeadingListEnd
-%-------------------------------------------
-% -----------Multiple Positions Heading-----------
-%    \resumeSubSubheading
-%     {Software Engineer I}{Oct 2014 - Sep 2016}
-%     \resumeItemListStart
-%        \resumeItem{Apache Beam}
-%          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
-%     \resumeItemListEnd
-%    \resumeSubHeadingListEnd
-%
-%-----------PROGRAMMING SKILLS-----------
+%-----------SKILLS-----------
 \section{Technical Skills}
 \begin{itemize}[leftmargin=0.15in, label={}]
 	\small{\item{
-	      \textbf{Languages}{: Javascript, Typescript, Python, Golang, C, C++, Java, HTML, CSS} \\
-	      \textbf{Technical Skills}{: Git, Github, Linux, Docker, CI/CD, Design Patterns, ETL, Web Scraping, Software Testing. Scripting.} \\
-	      \textbf{Technologies}{:  React, Redux, Node.js, Express, Next.js, Django, Flask, Svelte} \\
-	      \textbf{Cloud (GCP)}{: iAM, Vertex, Run, Functions, Compute, Storage, Artifact Registry, Firestore.} \\
-	      \textbf{Data-Driven}{: SQL, NoSQL, ORMs, Database, REST, RPC, GraphQL, Event Driven APIs, Websockets.}
+	      \textbf{Languages}{: JavaScript, TypeScript, Python, Go, C, C++, Java} \\
+	      \textbf{Web}{:  HTML, CSS, React, Node.js, Express, Next.js, Django, Flask, Svelte.} \\
+	      \textbf{Cloud \& DevOps}{: Docker, CI/CD, GCP(iAM, Vertex, Run, Functions, Compute, Storage, Firestore).} \\
+	      \textbf{Data \& APIs}{: SQL, MongoDB, NoSQL, ORMs, Database, REST, gRPC, GraphQL, Websockets.} \\
+	      \textbf{Other}{: Git, Github, Linux, Docker, CI/CD, Design Patterns, Web Scraping, Testing, Scripting, Microservices} \\
 	      }}
 \end{itemize}
 
@@ -198,35 +175,33 @@
 {\href{https://github.com/elweday/scribble}{\underline{\textbf{Scribble}}}}{}
 
 \resumeItemListStart
-\resumeItem{A game where you alternate between drawing and guessing the words that the other players drew, built using Next.js, React, YJS, Websockets, and TailwindCSS.}
-\resumeItem{The game is made real-time and collaborative using websockets for communication between peers and a custom state machine to manage game logic.}
+\resumeItem{Engineered a real-time multiplayer drawing and guessing game using Next.js, React, and WebSockets.}
+\resumeItem{Leveraged YJS for synchronizing the drawing state between peers providing a conflict-free real-time collaboration, enabling seamless drawing experiences across devices.}
+\resumeItem{Implemented a custom state machine to manage game logic, ensuring smooth and efficient gameplay.}
 \resumeItemListEnd
 
 \resumeProjectHeading
-
-{\href{https://github.com/elweday/CollegeSite}{\underline{\textbf{College Tracking System}}}}{}
+{\href{https://github.com/elweday/CollegeSite}{\underline{\textbf{College Management System}}}}{}
 \resumeItemListStart
-\resumeItem{Designed and populated a Database PostgreSQL, for a college website for grade tracking}
-\resumeItem{Using SvelteKit Crafted interactive views for educators and students, with charts, timetables, grades, course tracking and registration for students \& prioritizing UX \& accessibility.}
-\resumeItem{Implemented A RESTful APIs to connect the frontend and the backend}
+\resumeItem{Architected a comprehensive academic portal using SvelteKit and PostgreSQL, providing a robust platform for educators and students.}
+\resumeItem{Designed an intuitive UI for course registration, grade tracking, and timetable management.}
+\resumeItem{Integrated data visualization tools, providing insightful analytics on student performance and course popularity.}
+\resumeItem{Developed and maintained a comprehensive backend API, ensuring seamless integration with the frontend.}
 \resumeItemListEnd
-
 
 \resumeProjectHeading
 {\href{https://github.com/elweday/elweday.github.io-metro}{\underline{\textbf{Metropection}}}}{}
 \resumeItemListStart
+\resumeItem{Designed a responsive UI that handles complex map interactions smoothly on both desktop and mobile devices.}
 \resumeItem{Created an efficient pathfinding algorithm, improving route calculation speed by 75\% compared to existing solutions.}
 \resumeItem{Integrated real-time data from Google Maps API, achieving 98\% accuracy in travel time predictions.}
 \resumeItemListEnd
-
 \resumeSubHeadingListEnd
 
 
 \section{Extracurricular Activities}
 \resumeSubHeadingListStart
-\resumeSubheading
-{Head of Data Science Committee }{Nov 2022 -- Oct 2023}
-{\redact{@Energia Powered}}{}
+\resumeSubheading{Energia Powered }{Cairo, EG}{Head of Data Science Committee}{Nov 2022 -- Oct 2023}
 \resumeItemListStart
 \resumeItem{Led a team of 4 to develop and deliver a comprehensive data science curriculum, training over 40 students.}
 \resumeItem{Organized and facilitated 15+ workshops covering advanced topics in Data Science, Machine Learning and Deep Learning.}
